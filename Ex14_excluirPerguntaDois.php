@@ -1,5 +1,6 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
     $pergunta = $_POST["pergunta"];
 	$resposta = $_POST["resposta"];
     $pontos = $_POST["pontos"];
@@ -7,7 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$user = $_POST["user"];
 
     $arquivoAlunoIn = fopen("ask.txt", "r") or die("Erro na abertura do arquivo");
-    while (!feof($arquivoAlunoIn)) {
+    while (!feof($arquivoAlunoIn)) 
+	{
         $linhas[] = fgets($arquivoAlunoIn);
     }
     fclose($arquivoAlunoIn);
@@ -15,7 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $arquivoAlunoOut = fopen("ask.txt", "w") or die("Erro na abertura do arquivo");
     $x = 0;
     //$linha = "";
-    foreach ($linhas as $linha) {
+    foreach ($linhas as $linha) 
+	{
         $colunaDados = explode(";", $linha);
         if ($colunaDados[0] != $pergunta) 
 		{
@@ -34,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Excluir Aluno</h1>
             <br>
             <br>
-            <form action="Ex14_buscarPergunta.php" method=POST>
+            <form action="Ex14_buscarPerguntaExcluir.php" method=POST>
                 Pergunta: <input type=text name="pergunta" >
                 <br><br>
                 <input type="submit" value="Procurar">
