@@ -38,6 +38,7 @@
 			echo "<th>$cabeca</th>";
 		}
 			echo "<th>Alterar Pergunta</th>";
+			echo "<th>Excluir Pergunta</th>";
     echo "</tr>";
 	
         foreach ($linhas as $linha) //pego cada linha da variavel linhaS e jogo em linhA
@@ -52,7 +53,8 @@
                 echo "<td>$coluna</td>";
             }
 			echo "<td><a href='Ex14_buscarPergunta.php?pergunta=$perg'>Alterar</a></td>"; //metodo GET para buscar o aluno no formulário buscarAluno
-            echo "</tr>";
+            echo "<td><a href='Ex14_buscarPerguntaExcluir.php?pergunta=$perg'>Excluir</a></td>";
+			echo "</tr>";
         }
     ?>
 </table>
